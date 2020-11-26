@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# ces26-tarefa5
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Utilizando React, Node e o módulo Express,
+desenvolva uma aplicação com os seguintes
+requisitos:
 
-## Available Scripts
+1)Através de um formulário, coleta o nome e
+idade de uma pessoa.
 
-In the project directory, you can run:
+2)O formulário verifica se a idade é um número e
+é maior que 18 anos.
 
-### `npm start`
+3)Os dados coletados são armazenados no
+servidor em um arquivo no formato JSON.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4)Usando AJAX, implemente um botão que exibe
+os dados coletados em uma tabela.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Executando em ambiente local
 
-### `npm test`
+O presente projeto foi criado com o *create-react-app* de modo que já é automaticamente inicializada uma estrutura básica de aplicação em react.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Após obter uma cópia do diretório deve-se executar:
+```bash
+npm i
+```
+para que as dependências sejam satisfeitas.
 
-### `npm run build`
+Em seguida, basta inicializar a aplicação em ambiente local com:
+```bash
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Acessando o http://localhost:3007 a página inicial poderá ser visualizada com o browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Neste caso, também é necessário utilizar um segundo terminal para rodar o servidor juntamente com esse frontend; executando o comando:
+```bash
+node server/index.js
+```
+O servidor se manterá funcionando na porta 3010 do local.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Estrutura geral
+A página inicial da aplicação mostra um formulário simples centralizado para que o usuário submenta um nome e uma idade.
+Conforme especificado nos requsiitos existem validações do campo de idade, nos sentido de que sejam obtidos números maiores que 18.
 
-### `npm run eject`
+Há um botão para submeter o formulário preenchido. No terminal do servidor é exibida uma mensagem de sucesso no recebimento dos dados. Tais infomrações são salvas no arquivo *server/example.json*.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Existe também um botão para que sejam exibidos o conjunto de dados existentes no servidor. É construída uma tabela, em *src/Components/Table.js*, para exibir as informações presentes no arquivo .json.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Detalhes adicionais
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Maiores informações sobre a atividade podem ser encontradas no relatório e no código comentado.
