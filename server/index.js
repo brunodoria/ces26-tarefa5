@@ -1,3 +1,4 @@
+// inicializar dependencias
 var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require('fs');
@@ -7,6 +8,7 @@ app.use(cors())
 
 app.use(bodyParser.json());
 
+// rota para exibir a tabela, obtendo do backend
 app.get('/formtable', function(req, res)
 {
     let rawdata = fs.readFileSync('example.json');
@@ -14,6 +16,7 @@ app.get('/formtable', function(req, res)
     res.end(JSON.stringify(form));
 })
 
+// rota para postagem das informacoes do formulario
 app.post('/form', function (req, res) {
 
     let body = req.body;
@@ -25,6 +28,7 @@ app.post('/form', function (req, res) {
 
     form.push(body);
     let data = JSON.stringify(form);
+    // atualização do conteudo do arquivo
     fs.writeFile('example.json', data, (err) => {
         if (err) throw err;
         console.log('Dados armazenados.');
@@ -32,6 +36,7 @@ app.post('/form', function (req, res) {
     res.end(data);
 });
 
+// definir porta para o servidor
 const port = process.env.PORT || 3010;
 app.listen(port, () => {
     console.log('Server started on: ' + port);
